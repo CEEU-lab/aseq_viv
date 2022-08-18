@@ -137,13 +137,12 @@ def pct_asequible(estrato_bajo, estrato_medio, estrato_alto, ref, tipologia, yla
     props = dict(boxstyle='round', facecolor='linen', alpha=0.8)
     for i in range(len(ing_res)):
         ax.annotate('{}%'.format(ing_res[i]), xy=(i, ref/2), xycoords='data', bbox=props, ha='center')
-
-    label = round(100-ing_res[i],1)
-    if label < 0:
-        pos = ref
-    else:
-        pos = x[i] - x[i]*0.15
-    ax.annotate('{}%'.format(label), xy=(i, pos), xycoords='data', bbox=props, ha='center')
+        label = round(100-ing_res[i],1)
+        if label < 0:
+            pos = ref
+        else:
+            pos = x[i] - x[i]*0.15
+        ax.annotate('{}%'.format(label), xy=(i, pos), xycoords='data', bbox=props, ha='center')
 
     ax.annotate('{}'.format(tipologia),
                 xy=(-0.3, ref+(ref*0.01)),
