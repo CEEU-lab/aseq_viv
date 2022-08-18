@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import pathlib
 
 current_dir = pathlib.Path(__file__).parent.resolve()
-long_description = (current_dir / 'README.md').read_text(encoding='utf-8')
+long_description = (current_dir / 'Readme.md').read_text(encoding='utf-8')
 
 setup(
     name="aseq_viv",
@@ -22,7 +22,6 @@ setup(
     install_requires=[
         'numpy >= 1.22.2',
         'pandas >= 1.4.1',
-        'streamlit >= 1.1.0',
         'matplotlib >= 3.4.3',
     ]
 )
