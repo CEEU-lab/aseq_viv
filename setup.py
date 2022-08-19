@@ -11,12 +11,13 @@ setup(
     long_description=long_description,
     author='CEEU - UNSAM',
     author_email='fcatalano@unsam.edu.ar',
-    url='https://github.com/PyMap/aseq_viv',
+    url='https://github.com/CEEU-lab/aseq_viv',
     classifiers=[
     'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
     'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10'
     ],
     packages=find_packages(exclude=['*.tests']),
     install_requires=[
