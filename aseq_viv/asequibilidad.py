@@ -173,4 +173,4 @@ def pct_asequible(estrato_bajo, estrato_medio, estrato_alto, ref, tipologia, yla
         if d < 0:
             ax.vlines(x=[idx + .2], ymin=x[idx], ymax=ref, colors='r', ls=':', lw=2, label='vline_single - full height')
         else:
-            ax.vlines(x=[idx + .2], ymin=ref, ymax=x[idx], colors='b', ls=':', lw=2, label='vline_single - full height')
+            ax.vlines(x=[idx + .2], ymin=ref, ymax=x[idx], colors='w', ls=':', lw=2, label='vline_single - full height')
