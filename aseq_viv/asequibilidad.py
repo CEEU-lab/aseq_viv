@@ -76,11 +76,11 @@ def auc_asequible(estrato_bajo, estrato_medio, estrato_alto, ylabel='Monto alqui
     ax.set_yticklabels(y_value)
 
     # references
-    props = dict(boxstyle='round', facecolor='linen', alpha=0.8)
-    ax.axvline(estrato_bajo_qcut[-1], color='red', linewidth=0.5)
+    props = dict(boxstyle='round', facecolor='#fed547', alpha=0.8)
+    ax.axvline(estrato_bajo_qcut[-1], color="#07cdd8", linewidth=0.5)
     ax.annotate('Bajos (≤ 1 CBT)', xy=(estrato_bajo_qcut[-1]/2, 275), xycoords='data', bbox=props, ha='right')
 
-    ax.axvline(estrato_medio_qcut[-1], color='orange', linewidth=0.5)
+    ax.axvline(estrato_medio_qcut[-1], color='#4e2c76', linewidth=0.5)
     estrato_medio_pos = np.median(range(estrato_bajo_qcut[-1], estrato_medio_qcut[-1]))
     ax.annotate('Medios (1 - 3,5 CBT)', xy=(estrato_medio_pos, 275), xycoords='data', bbox=props, ha='center')
 
@@ -103,7 +103,7 @@ def pct_asequible(estrato_bajo, estrato_medio, estrato_alto, ref, tipologia, yla
     estrato_alto (dict): punto de corte y porcentaje que representan sobre un precio de referencia
                          (e.g. {50,000: 0.3}
     ref(int): precio de referencia
-    tipologia(str): nombre de la tipologia del precio de referencia 
+    tipologia(str): nombre de la tipologia del precio de referencia
     ylabel (str): nombre del eje y
     ...
     Returns
@@ -130,11 +130,11 @@ def pct_asequible(estrato_bajo, estrato_medio, estrato_alto, ref, tipologia, yla
     ind = np.arange(len(x))
 
     fig, ax = plt.subplots(figsize=(12,4))
-    ax.bar(x=ind, height=x, width=0.55, color='#CCCCCC', align='center')
-    ax.bar(x=ind, height=y, width=0.55/2,  color='#FFCC00', align='center')
+    ax.bar(x=ind, height=x, width=0.55, color='#07cdd8', align='center')
+    ax.bar(x=ind, height=y, width=0.55/2,  color='#4e2c76', align='center')
 
     # anotaciones
-    props = dict(boxstyle='round', facecolor='linen', alpha=0.8)
+    props = dict(boxstyle='round', facecolor='#fed547', alpha=0.8)
     for i in range(len(ing_res)):
         ax.annotate('{}%'.format(ing_res[i]), xy=(i, ref/2), xycoords='data', bbox=props, ha='center')
         label = round(100-ing_res[i],1)
