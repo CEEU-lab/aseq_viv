@@ -76,16 +76,16 @@ def auc_asequible(estrato_bajo, estrato_medio, estrato_alto, ylabel='Monto alqui
     ax.set_yticklabels(y_value)
 
     # references
-    props = dict(boxstyle='round', facecolor='#fed547', alpha=0.8)
+    props = dict(boxstyle='round', facecolor='#4e2c76', alpha=0.8)
     ax.axvline(estrato_bajo_qcut[-1], color="#07cdd8", linewidth=0.5)
-    ax.annotate('Bajos (≤ 1 CBT)', xy=(estrato_bajo_qcut[-1]/2, 275), xycoords='data', bbox=props, ha='right')
+    ax.annotate('Bajos (≤ 1 CBT)', xy=(estrato_bajo_qcut[-1]/2, 275), xycoords='data', bbox=props, color='white', ha='right')
 
-    ax.axvline(estrato_medio_qcut[-1], color='#4e2c76', linewidth=0.5)
+    ax.axvline(estrato_medio_qcut[-1], color='#fed547', linewidth=0.5)
     estrato_medio_pos = np.median(range(estrato_bajo_qcut[-1], estrato_medio_qcut[-1]))
-    ax.annotate('Medios (1 - 3,5 CBT)', xy=(estrato_medio_pos, 275), xycoords='data', bbox=props, ha='center')
+    ax.annotate('Medios (1 - 3,5 CBT)', xy=(estrato_medio_pos, 275), xycoords='data', bbox=props, color='white', ha='center')
 
     estrato_alto_pos = np.median(range(estrato_medio_qcut[-1], estrato_alto_qcut[-1]))
-    ax.annotate('Altos (> 3,5 CBT)', xy=(estrato_alto_pos, 275), xycoords='data', bbox=props, ha='center')
+    ax.annotate('Altos (> 3,5 CBT)', xy=(estrato_alto_pos, 275), xycoords='data', bbox=props, color='white', ha='center')
 
     ax.axhline(100, color='black', linestyle='--', linewidth=0.75)
     ax.yaxis.labelpad = 20
@@ -131,18 +131,18 @@ def pct_asequible(estrato_bajo, estrato_medio, estrato_alto, ref, tipologia, yla
 
     fig, ax = plt.subplots(figsize=(12,4))
     ax.bar(x=ind, height=x, width=0.55, color='#07cdd8', align='center')
-    ax.bar(x=ind, height=y, width=0.55/2,  color='#4e2c76', align='center')
+    ax.bar(x=ind, height=y, width=0.55/2,  color='#fed547', align='center')
 
     # anotaciones
-    props = dict(boxstyle='round', facecolor='#fed547', alpha=0.8)
+    props = dict(boxstyle='round', facecolor='#4e2c76', alpha=0.8)
     for i in range(len(ing_res)):
-        ax.annotate('{}%'.format(ing_res[i]), xy=(i, ref/2), xycoords='data', bbox=props, ha='center')
+        ax.annotate('{}%'.format(ing_res[i]), xy=(i, ref/2), xycoords='data', bbox=props, color='white', ha='center')
         label = round(100-ing_res[i],1)
         if label < 0:
             pos = ref
         else:
             pos = x[i] - x[i]*0.15
-        ax.annotate('{}%'.format(label), xy=(i, pos), xycoords='data', bbox=props, ha='center')
+        ax.annotate('{}%'.format(label), xy=(i, pos), xycoords='data', bbox=props, color='white', ha='center')
 
     ax.annotate('{}'.format(tipologia),
                 xy=(-0.3, ref+(ref*0.01)),
